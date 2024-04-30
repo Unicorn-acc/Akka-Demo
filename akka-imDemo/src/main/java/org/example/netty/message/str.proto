@@ -1,0 +1,21 @@
+// 指定使用 proto3 版本的语法（默认使用proto2）
+syntax = "proto3";
+
+// 当前 .proto文件所在的目录（类似于Java文件的包路径）
+package org.example.netty.message;
+
+// .proto文件生成 .java文件时的目录
+option java_package = "org.example.netty.message.dao";
+// 生成的Java文件类名
+option java_outer_classname = "StrMessage";
+// 是否生成equals和hash方法
+option java_generate_equals_and_hash = true;
+// 是否将自动生成的Java代码，划分为成多个文件
+option java_multiple_files = false;
+
+// proto对象的定义（类似于Java的class定义）
+// 这里的msg名字随便填「Object1」，生成的时候类目为以上面定义的java_outer_classname
+message msg {
+  // 自身属性的定义（后面的数字，代表属性的顺序）
+  string msg = 1;
+}
